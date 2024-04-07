@@ -22,6 +22,15 @@ let user_Answer = await inquirer.prompt([
     {
         name: "amount",
         message: "Enter Your Amount",
-        type: 'number'
+        type: 'number',
     },
 ]);
+let formamount = currency[user_Answer.from];
+let toamount = currency[user_Answer.to];
+let amount = user_Answer.amount;
+let baseamount = amount / formamount; //USD base currency // 4
+let covertedamount = baseamount * toamount;
+console.log(formamount);
+console.log(toamount);
+console.log(amount);
+console.log(covertedamount);
